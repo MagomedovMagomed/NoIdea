@@ -1,0 +1,124 @@
+$Color : #3B3C3D;
+
+.app{
+    //display: flex;
+    //justify-content: center;
+
+    .container{
+        width: 1024;
+
+        .link{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        //Login and Register
+        .auth{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: $Color;
+        
+            h1{
+                font-size: 20px;
+                color: white;
+                margin-bottom: 20px;
+            }
+
+            form{
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                width: 200px;
+                gap: 20px;
+                background-color: white;
+
+                input{
+                    padding: 10px;
+                    border: none;
+                    border-bottom: 1px solid #44B39D;
+                }
+
+                button{
+                    padding: 10px;
+                    border: none;
+                    background-color: #44B39D;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+
+            span{
+                font-size: 12px;
+                text-align: center;
+            }
+
+            p{
+                font-size: 12px;
+                color: red;
+                text-align: center;
+            }
+        }
+
+        //Navbar
+        .navbar{
+            .container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 10px;
+                //background-color: ;
+                .logo{
+                    img{
+                        width: 75px;
+                    }
+                }
+                .links{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    
+
+                    h6{
+                        font-size: 16px;
+                        font-weight: 300;
+                    
+                        &:hover{
+                            width: 22;
+                            color: #44B39D;
+                        }
+                    }
+                }
+
+                .write{
+                    .links{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    &:hover{
+                        width: 22;
+                        color: #44B39D;
+                    }
+                }
+            }
+        }
+
+
+        //Footer
+        footer{
+            background-color:#44B39D;
+            margin-top: 100px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .link{
+                padding: 20px;
+                color: white;
+            }
+        }
+    }
+}
