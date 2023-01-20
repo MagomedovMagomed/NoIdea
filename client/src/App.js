@@ -12,8 +12,11 @@ import Navbar from "./component/Navbar";
 import Write from "./pages/Write";
 import Single from "./pages/Single";
 import "./style.scss";
-
+//Оболочка главной страницы
 const Layout = () => {
+  //Верхнее меню
+  //Вывод постов
+  //Подвал
   return(
     <>
       <Navbar />
@@ -24,35 +27,40 @@ const Layout = () => {
 };
 
 const router = createBrowserRouter([
-  {
+  {   //Путь оболочки главной страницы
       path: "/",
       element: <Layout/>,
       children:[
       {
+        //Путь главной страницы
         path: "/",
         element: <Home/>
       },
       {
+        //Путь отдельного поста
         path: "/post/:id",
         element: <Single/>
       },
       {
+        //Путь на страницу создания нового поста
         path: "/write",
         element: <Write/>
       },
     ]
   },
   {
+    //Путь на страницу регистрации
     path: "/register",
     element: <Register/>,
   },
   {
+    //Путь на страницу авторизации
     path: "/login",
     element: <Login />,
   },
 ]);
 
-
+//Функция главной страницы
 function App() {
   return (
     <div className="app">
@@ -62,7 +70,5 @@ function App() {
     </div>
   );
 }
-
-
 
 export default App;
