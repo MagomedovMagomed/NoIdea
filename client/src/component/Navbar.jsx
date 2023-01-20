@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../Image/Logo.png"
-
+//Этот блок предназначен для рендеринга навигационной панели или верхнего колонтитула
 const Navbar = () => {
     return(
         <div className="navbar">

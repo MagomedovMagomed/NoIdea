@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+//Эта страница предназначена для регистрации в веб приложении
 const Register = () => {
     return(
         <div className="auth">

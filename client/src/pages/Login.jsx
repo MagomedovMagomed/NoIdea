@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+//Эта страница предназначена для входа в веб приложение
 const Login = () => {
     return(
         <div className="auth">

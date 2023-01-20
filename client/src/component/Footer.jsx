@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+//Этот блок предназначен для рендеринга подвала или нижнего колонтитула
 const Footer = () => {
     return(
         <footer>

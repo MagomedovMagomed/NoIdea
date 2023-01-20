@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+//Эта главная страница на которой будут выводиться посты
 const Home = () => {
     //Константа постов, потом посты переедут в базу данных
     const posts = [
