@@ -49,6 +49,8 @@ const Home = () => {
                             </Link>
                             <p>{post.desc}</p>
                             <button>Читать дальше</button>
+                            <button>Плохо</button>
+                            <button>Хорошо</button>
                         </div>
                     </div>
                 ))}
