@@ -12,26 +12,26 @@ const Home = () => {
             //Описание поста
             desc: "Здесь у нас расписано задание и в чем нужна помощь и т.д.",
             //Путь картинки
-            img: "Здесь будет картинка или не будет? Философский вопрос",
+            img: "https://the-distance.ru/wp-content/uploads/2022/03/QAxWSl0M3iYDlMMVysmXZWEwcYqrD3uWEf0Riyec.jpeg",
             //В будующем будет больше параметров
         },
         {
             id:2,
             title: "Здесь у нас интересный заголовок",
             desc: "Здесь у нас расписано задание и в чем нужна помощь и т.д.",
-            img: "Здесь будет картинка или не будет? Философский вопрос",
+            img: "https://the-distance.ru/wp-content/uploads/2022/03/QAxWSl0M3iYDlMMVysmXZWEwcYqrD3uWEf0Riyec.jpeg",
         },
         {
             id:3,
             title: "Здесь у нас интересный заголовок",
             desc: "Здесь у нас расписано задание и в чем нужна помощь и т.д.",
-            img: "Здесь будет картинка или не будет? Философский вопрос",
+            img: "https://the-distance.ru/wp-content/uploads/2022/03/QAxWSl0M3iYDlMMVysmXZWEwcYqrD3uWEf0Riyec.jpeg",
         },
         {
             id:4,
             title: "Здесь у нас интересный заголовок",
             desc: "Здесь у нас расписано задание и в чем нужна помощь и т.д.",
-            img: "Здесь будет картинка или не будет? Философский вопрос",
+            img: "https://the-distance.ru/wp-content/uploads/2022/03/QAxWSl0M3iYDlMMVysmXZWEwcYqrD3uWEf0Riyec.jpeg",
         },
     ]
 
@@ -40,17 +40,19 @@ const Home = () => {
             <div className="posts">
                 {posts.map(post=>(
                     <div className="post" key={post.id}>
-                        <div className="content">
-                            <p>{post.img}</p>
+                        <div className="img">
+                            <img src={post.img} alt=""/>
                         </div>
                         <div className="content">
-                            <Link className="link" to={'/post/${post.id}'}>
+                            <Link className="link" to={`/post/${post.id}`}>
                                 <h1>{post.title}</h1>
                             </Link>
                             <p>{post.desc}</p>
-                            <button>Читать дальше</button>
-                            <button>Плохо</button>
-                            <button>Хорошо</button>
+                            <div className="buttons">
+                                <button>Читать дальше</button>
+                                <button>Плохо</button>
+                                <button>Хорошо</button>
+                            </div>
                         </div>
                     </div>
                 ))}
