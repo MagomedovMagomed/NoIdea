@@ -2,6 +2,7 @@ import React from "react";
 import Edit from "../Image/edit.png"
 import Delete from "../Image/delete.png"
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Menu from "../component/Menu";
 
 //Эта страница предназначена для вывода полной информации о посте
 const Single = () => {
@@ -30,7 +31,7 @@ const Single = () => {
                 Здесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовок
                 </p>
             </div>
-            <div className="menu">m</div>
+            <Menu/>
         </div>
     )
 }
