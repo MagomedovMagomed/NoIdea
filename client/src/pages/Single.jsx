@@ -1,4 +1,7 @@
 import React from "react";
+import Edit from "../Image/edit.png"
+import Delete from "../Image/delete.png"
+
 //Эта страница предназначена для вывода полной информации о посте
 const Single = () => {
     return(
@@ -10,6 +13,10 @@ const Single = () => {
                     <div className="info">
                         <span>John</span>
                         <p>Posted 2 days ago</p>
+                    </div>
+                    <div className="edit">
+                        <img src={Edit} alt="" />
+                        <img src={Delete} alt="" />
                     </div>
                 </div>
             </div>
