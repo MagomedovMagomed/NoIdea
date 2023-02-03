@@ -71,37 +71,37 @@ $Color : #3B3C3D;
                 text-align: center;
             }
         }
-        button{    
-            text-decoration: none;
-            display: inline-block;
-            padding: 10px 30px;
-            margin: 10px 20px;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid #47C9AF;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            color: #47C9AF;
-            transition: .2s ease-in-out;
-            }
-        button:before {
-            content: "";
-            background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
-            height: 50px;
-            width: 50px;
-            position: absolute;
-            top: -8px;
-            left: -75px;
-            transform: skewX(-45deg);
-            }
-        button:hover {
-            background: #47C9AF;
-            color: #fff;
-            }
-        button:hover:before {
-            left: 150px;
-            transition: .5s ease-in-out;
-            }
+        // button{    
+        //     text-decoration: none;
+        //     display: inline-block;
+        //     padding: 10px 30px;
+        //     margin: 10px 20px;
+        //     position: relative;
+        //     overflow: hidden;
+        //     border: 2px solid #47C9AF;
+        //     border-radius: 8px;
+        //     font-family: 'Montserrat', sans-serif;
+        //     color: #47C9AF;
+        //     transition: .2s ease-in-out;
+        //     }
+        // button:before {
+        //     content: "";
+        //     background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+        //     height: 50px;
+        //     width: 50px;
+        //     position: absolute;
+        //     top: -8px;
+        //     left: -75px;
+        //     transform: skewX(-45deg);
+        //     }
+        // button:hover {
+        //     background: #47C9AF;
+        //     color: #fff;
+        //     }
+        // button:hover:before {
+        //     left: 150px;
+        //     transition: .5s ease-in-out;
+        //     }
         //Navbar
         .navbar{
             .container{
@@ -230,14 +230,17 @@ $Color : #3B3C3D;
             }
           }
           //SINGLE
+          .containerpost{
+            display: flex;
+            justify-content: center;
+          }
           .single{
             display: flex;
             justify-content: center;
-
             flex-direction: row;
             gap: 50px;
-            width: 1624px ;
-
+            width: 1400px;
+           
             .content{
                 flex: 5;
                 display: flex;
@@ -249,7 +252,7 @@ $Color : #3B3C3D;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 25%;
+                    
                     height: 25%;
                     object-fit: cover;
                 }
@@ -310,9 +313,94 @@ $Color : #3B3C3D;
                         height: 25%;
                         object-fit: cover;
                     }
+                    h2{
+                        color: #555;
+                    }
                 }
             }
           }
+          //Write
+
+          .add{
+            margin-top:  20px;
+            display: flex;
+            gap: 20px;
+            width: 1000px;
+                .content{
+                    flex: 5;          
+                    display: flex; 
+                    flex-direction: column;     
+                    gap: 20px;
+
+                input{
+                    padding: 10px;
+                    border: 1px solid lightgray;
+                }
+
+                .editorContainer{
+                    height: 300px;
+                    overflow: scroll;
+                    border: 1px solid lightgray;
+                }
+
+                .editor{
+                    height: 100%;
+                    border: none;
+                }
+              }
+
+              .menu{
+                  flex:2;
+                  display:flex;
+                  flex-direction: column;
+                  gap: 20px;
+
+                  .item{
+                    border: 1px solid lightgray;
+                    padding: 10px;
+                    flex:1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    font-size: 12px;
+                    color: #555;
+
+                    .h1{
+                        font-size: 20px;
+                    }
+
+                    .file{
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+
+                    .buttons{
+                        display: flex;
+                        justify-content: space-between;
+                        :first-child{
+                            cursor: pointer;
+                            color: teal;
+                            background-color: white;
+                            border: 1px solid teal;
+                            padding: 3px 5px;
+                        }
+                        :last-child{
+                            cursor: pointer;
+                            color: white;
+                            background-color: teal;
+                            border: 1px solid teal;
+                            padding: 3px 5px;
+                        }
+                    }
+                    .cat{
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        color: teal;
+                    }
+                  }
+              }
+          }
     }
 }
-//41:36
+//41:36ы
