@@ -10,7 +10,7 @@ const Write = () => {
     return(
         <div className="containerpost">
             <div className="add">
-                <div className="content">countent
+                <div className="content">Контент
                     <input type="text" value='Title'/>  
                     <div className="editorContainer">
                         <ReactQuill  className="editor" theme="snow" value={value} onChange={setValue} />
@@ -18,45 +18,45 @@ const Write = () => {
                 </div>
                 <div className="menu">
                     <div className="item">
-                        <h1>Publish</h1>
+                        <h1>Публикация</h1>
                         <span>
-                            <b>Status:</b> Draft
+                            <b>Статус:</b> Пишется
                         </span>
                         <span>
-                            <b>Visibility:</b> Publish
+                            <b>Видимость:</b> Опубликовано
                         </span>
                         <input style={{display: 'none'}} type="file" name="" id="file"></input>
-                        <label className="file" htmlFor="file">Upload Image</label>
+                        <label className="file" htmlFor="file">Загрузить картинку</label>
                         <div className="buttons">
-                            <button>Save as a draft</button>
-                            <button>Update</button>
+                            <button>Сохранить черновик</button>
+                            <button>Обновить</button>
                         </div>
                     </div>
                     <div className="item">
-                        <h1>Category</h1>
+                        <h1>Категории</h1>
                         <div className="cat">
                             <input type="radio" name="cat" value="art" id="art"/>
-                            <label htmlFor="art">Art</label>
+                            <label htmlFor="art">Python</label>
                         </div>
                         <div className="cat">
                             <input type="radio" name="cat" value="art" id="art"/>
-                            <label htmlFor="art">Art</label>
+                            <label htmlFor="art">Javascript</label>
                         </div>
                         <div className="cat">
                             <input type="radio" name="cat" value="science" id="science"/>
-                            <label htmlFor="science">Science</label>
+                            <label htmlFor="science">Golang</label>
                         </div>
                         <div className="cat">
                             <input type="radio" name="cat" value="tech" id="tech"/>
-                            <label htmlFor="tech">Tech</label>
+                            <label htmlFor="tech">C#</label>
                         </div>
                         <div className="cat">
                             <input type="radio" name="cat" value="cinema" id="cinema"/>
-                            <label htmlFor="cinema">Cinema</label>
+                            <label htmlFor="cinema">Ruby</label>
                         </div>
                         <div className="cat">
                             <input type="radio" name="cat" value="design" id="design"/>
-                            <label htmlFor="design">Design</label>
+                            <label htmlFor="design">Life</label>
                         </div>
                     </div>
                 </div>     
