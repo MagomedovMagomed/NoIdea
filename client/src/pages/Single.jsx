@@ -1,47 +1,75 @@
-import React from "react";
+import React, { useContext,useEffect,useState, } from "react";
 import Edit from "../Image/edit.png"
 import Delete from "../Image/delete.png"
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Menu from "../component/Menu";
+import moment from "moment"
+import { AuthContext } from "../context/authContext";
+import axios from "axios";
 
 //Эта страница предназначена для вывода полной информации о посте
 const Single = () => {
-    return(
-        <div className="containerpost">
+    const [post, setPost] = useState({});
+  
+    const location = useLocation();
+    const navigate = useNavigate();
+  
+    const postId = location.pathname.split("/")[2];
+  
+    const { currentUser } = useContext(AuthContext);
+  
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const res = await axios.get(`/posts/${postId}`);
+          setPost(res.data);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      fetchData();
+    }, [postId]);
+  
+    const handleDelete = async ()=>{
+      try {
+        await axios.delete(`/posts/${postId}`);
+        navigate("/")
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  
+    const getText = (html) =>{
+      const doc = new DOMParser().parseFromString(html, "text/html")
+      return doc.body.textContent
+    }
+    return (
         <div className="single">
-            <div className="content">
-                <img src="https://i.postimg.cc/xCzF1bs9/Tylou-generated-idea-lamps-computer-f8eadbd7-51ac-4b41-95a3-4fae0ea9af41.png" />
-                <div className="user">
-                    <img src="https://pokatim.ru/uploads/posts/2020-06/1593531741_81397836_158623672110867_4158328593054953414_n.jpg" />
-                    <div className="info">
-                        <span>Егор</span>
-                        <p>Запостил 2 дня назад</p>
-                    </div>
-                    <div className="edit">
-                        <Link to={`/write?edit=2`}>
-                            <img src={Edit} alt="" />
-                        </Link>
-                        
-                        <img src={Delete} alt="" />
-                    </div>
+          <div className="content">
+            <img className="imgPost" src={post.img} alt="" />
+            <div className="user">
+              {post.userImg && <img
+                src={post.userImg}
+                alt=""
+              />}
+              <div className="info">
+                <span>{post.username}</span>
+                <p>Posted {moment(post.date).fromNow()}</p>
+              </div>
+              {currentUser.username === post.username && (
+                <div className="edit">
+                  <Link to={`/write?edit=2`} state={post}>
+                    <img src={Edit} alt="" />
+                  </Link>
+                  
                 </div>
-                <h1> Здесь у нас интересный заголовок</h1>
-                <p>Здесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовок
-                Здесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовок
-                Здесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовок
-                Здесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовок
-                </p>
-                <p>Здесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовок
-                Здесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовок
-                </p>
-
-                <p>Здесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовокЗдесь у нас интересный заголовок
-                </p>
+              )}
             </div>
-            <Menu/>
+            <h1>{post.title}</h1>
+            <h2>{post.desc}</h2>
+            </div>
+          <Menu cat={post.cat}/>
         </div>
-        </div>
-    )
-}
-
+      );
+    };
 export default Single;

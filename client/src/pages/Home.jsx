@@ -11,14 +11,14 @@ const Home = () => {
     useEffect(()=>{
         const fetchData = async ()=>{
             try{
-                const res = await axios.get(`/posts`)
+                const res = await axios.get(`/posts${cat}`)
                 setPosts(res.data)
             }catch(err){
                 console.log(err)
             }
         }
         fetchData()
-    },[])
+    },[cat])
 
     return(
         <div className="home">
