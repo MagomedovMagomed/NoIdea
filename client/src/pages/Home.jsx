@@ -1,39 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect,useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
 //Эта главная страница на которой будут выводиться посты
 const Home = () => {
     //Константа постов, потом посты переедут в базу данных
-    const posts = [
-        {
-            //id поста
-            id:1,
-            //Название поста
-            title: "Здесь у нас интересный заголовок",
-            //Описание поста
-            desc: "Здесь у нас расписано задание и в чем нужна помощь и т.д.",
-            //Путь картинки
-            img: "https://the-distance.ru/wp-content/uploads/2022/03/QAxWSl0M3iYDlMMVysmXZWEwcYqrD3uWEf0Riyec.jpeg",
-            //В будующем будет больше параметров
-        },
-        {
-            id:2,
-            title: "Здесь у нас интересный заголовок",
-            desc: "Здесь у нас расписано задание и в чем нужна помощь и т.д.",
-            img: "https://the-distance.ru/wp-content/uploads/2022/03/QAxWSl0M3iYDlMMVysmXZWEwcYqrD3uWEf0Riyec.jpeg",
-        },
-        {
-            id:3,
-            title: "Здесь у нас интересный заголовок",
-            desc: "Здесь у нас расписано задание и в чем нужна помощь и т.д.",
-            img: "https://the-distance.ru/wp-content/uploads/2022/03/QAxWSl0M3iYDlMMVysmXZWEwcYqrD3uWEf0Riyec.jpeg",
-        },
-        {
-            id:4,
-            title: "Здесь у нас интересный заголовок",
-            desc: "Здесь у нас расписано задание и в чем нужна помощь и т.д.",
-            img: "https://the-distance.ru/wp-content/uploads/2022/03/QAxWSl0M3iYDlMMVysmXZWEwcYqrD3uWEf0Riyec.jpeg",
-        },
-    ]
+    const [posts,setPosts] = useState([])
+
+    const cat = useLocation().search
+
+    useEffect(()=>{
+        const fetchData = async ()=>{
+            try{
+                const res = await axios.get(`/posts`)
+                setPosts(res.data)
+            }catch(err){
+                console.log(err)
+            }
+        }
+        fetchData()
+    },[])
 
     return(
         <div className="home">
